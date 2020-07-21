@@ -1,0 +1,13 @@
+{
+  "name": "dockerized-node-app",
+  "version": "1.0.0",
+  "description": "CRUD app example on Docker",
+  "author": "Krystel Baca Salayandia",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "standard": "^14.3.4"
+  }
+}
