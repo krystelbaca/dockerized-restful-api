@@ -4,10 +4,25 @@
   "description": "CRUD app example on Docker",
   "author": "Krystel Baca Salayandia",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jasmine"
   },
   "dependencies": {
     "express": "^4.17.1",
     "standard": "^14.3.4"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "nodemon": "^2.0.4"
+  },
+  "standard": {
+    "globals": [
+      "jasmine",
+      "describe",
+      "it",
+      "fit",
+      "expect"
+    ]
   }
 }
