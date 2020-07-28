@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  api:
+    image: node:latest
+    container_name: dockerized_restful_api
+    command: npm run dev
+    depends_on: 
+      - postgres
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - 3002
+
+  postgres:
+    image: postgres:10.7
+    container_name: restful-db
+    volumes:
+      - restful_api_data:/var/lib/postgresql/data
+    ports:
+      - 5005
+
+volumes:
+  restful_api_data:
+    external: true
