@@ -7,7 +7,7 @@ const host = 'localhost'
 const app = express()
 
 const validRoutes = () => {
-  app.use('/api/v1/health', require('./api/health'))
+  app.get('/api/v1/health', require('./api/health'))
 }
 
 validRoutes()
