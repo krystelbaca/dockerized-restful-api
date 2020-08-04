@@ -15,7 +15,7 @@ dev:
 
 # WIP::make test: runs unit and functional tests
 test:
-	docker-compose -f docker-compose.yaml -f run --rm api
+	docker-compose run --rm api npm test
 
 # make api-bash: enters the dockerized_restful_api bash
 api-bash:

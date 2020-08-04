@@ -18,7 +18,8 @@ app.get('/', (req, res) => {
 
 const server = http.createServer(app)
 
-server.listen(port, host)
-console.log(`Running node app on http://${host}:${port}`)
+server.listen(port, function () {
+  console.log(`Running node app on http://${host}:${port}`)
+})
 
 module.exports = app
