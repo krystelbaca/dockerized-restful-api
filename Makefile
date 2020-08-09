@@ -9,6 +9,13 @@ install:
 	rm -rf node_modules
 	docker-compose run --rm api npm install
 
+# make db-setup: creates the db-schema
+db-setup: db-init db-migrationns db-seed
+
+# make db: runs postgres
+db:
+	docker-compose up -d postgres
+
 # make dev: runs the server in development mode
 dev: 
 	docker-compose up api

@@ -19,7 +19,11 @@ services:
     volumes:
       - restful_api_data:/var/lib/postgresql/data
     ports:
-      - 5005
+      - 5005:${POSTGRES_PORT}
+    environment: 
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
 
 volumes:
   restful_api_data:
