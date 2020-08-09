@@ -1,5 +1,8 @@
 .PHONY: dockerized_restful_api dev, debug, install setup and test
 
+# 				Initial API Setup
+# ==================================================
+
 # make setup: creates the docker volumes needed:
 setup: 
 	docker volume create restful_api_data
@@ -9,18 +12,29 @@ install:
 	rm -rf node_modules
 	docker-compose run --rm api npm install
 
+# 				POSTGRES DB Service
+# ==================================================
+
 # make db-setup: creates the db-schema
-db-setup: db-init db-migrationns db-seed
+db-setup: db-init db-migrations db-seed
 
 # make db: runs postgres
 db:
 	docker-compose up -d postgres
 
+# make db-init: created the db
+db-init:
+	docker-compose run --rm api npm run db:init
+
+# make build: builds the container using the docker-compose
+build:
+	docker-compose up --build
+
 # make dev: runs the server in development mode
 dev: 
 	docker-compose up api
 
-# WIP::make test: runs unit and functional tests
+# make test: runs unit and functional tests
 test:
 	docker-compose run --rm api npm test
 

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "jasmine"
+    "test": "jasmine",
+    "db:init": "node 'src/database/scripts/create.db.schema.js'"
   },
   "dependencies": {
     "agent": "^0.2.1",
