@@ -12,6 +12,7 @@ services:
     working_dir: /app
     ports:
       - "8083:3002"
+    env_file: .env
 
   postgres:
     image: postgres:10.7

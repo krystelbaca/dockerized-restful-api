@@ -6,9 +6,9 @@ const config = {
     HOST: process.env.SERVER_HOST,
     API_ROUTE: {
       V1: '/api/v1'
-    },
-    POSTGRES: require('../database/config/postgres.config')
-  }
+    }
+  },
+  POSTGRES: require('../database/config/postgres.config')
 }
 
 module.exports = config
