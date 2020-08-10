@@ -26,6 +26,17 @@ db:
 db-init:
 	docker-compose run --rm api npm run db:init
 
+# make db-migrations: run the db migrations
+db-migrations:
+	docker-compose run --rm api npm run db:migrations
+
+# make db-seeds: seeds the db
+db-seed:
+	docker-compose run --rm ares-services npm run db:seed
+
+#				RESTFUL API SERVICE
+# =================================================
+
 # make build: builds the container using the docker-compose
 build:
 	docker-compose up --build
