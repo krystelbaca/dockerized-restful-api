@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize/types")
-
 const tableName = 'artists'
 const modelName = 'artists'
 

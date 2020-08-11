@@ -10,4 +10,31 @@ const POSTGRES = {
   MIGRATION_CONFIG: {}
 }
 
+Object.assign(POSTGRES.DB_CONFIG, {
+  host: POSTGRES.HOST,
+  port: POSTGRES.PORT,
+  dialect: POSTGRES.DIALECT,
+  define: {
+    underscored: false,
+    schema: POSTGRES.SCHEMA
+  },
+  logging: false,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+})
+
+Object.assign(POSTGRES.MIGRATION_CONFIG, {
+  username: POSTGRES.USER,
+  password: POSTGRES.PASSWORD,
+  database: POSTGRES.DB_NAME,
+  host: POSTGRES.HOST,
+  port: POSTGRES.PORT,
+  schema: POSTGRES.SCHEMA,
+  dialect: POSTGRES.DIALECT
+})
+
 module.exports = POSTGRES

@@ -32,7 +32,7 @@ db-migrations:
 
 # make db-seeds: seeds the db
 db-seed:
-	docker-compose run --rm ares-services npm run db:seed
+	docker-compose run --rm api npm run db:seed
 
 #				RESTFUL API SERVICE
 # =================================================
